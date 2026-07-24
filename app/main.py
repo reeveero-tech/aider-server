@@ -10,3 +10,10 @@ app = FastAPI(
 
 app.include_router(health_router)
 app.include_router(aider_router)
+
+@app.get("/")
+async def root():
+    return {
+        "name": "Aider Server",
+        "status": "online"
+    }
